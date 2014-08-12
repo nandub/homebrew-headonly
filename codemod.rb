@@ -4,17 +4,14 @@ class Codemod < Formula
   homepage 'https://github.com/facebook/codemod'
   head 'https://github.com/facebook/codemod.git'
 
-  depends_on :python2
+  depends_on :python
 
   def install
-    python do
-      system python, 'setup.py', 'install', "--prefix=#{prefix}"
-      bin.install_symlink 'codemod.py' => 'codemod'
-    end
-  end
-
-  def caveats
-    python.standard_caveats if python
+    ENV.prepend_create_path 'PYTHONPATH', libexec+'lib/python2.7/site-packages'
+    (libexec+'lib/python2.7/site-packages').mkpath
+    system "python", 'setup.py', 'install', "--prefix=#{libexec}"
+    bin.install libexec+'bin/codemod.py' => 'codemod'
+    bin.env_script_all_files(libexec+'bin', :PYTHONPATH => ENV['PYTHONPATH'])
   end
 
   test do

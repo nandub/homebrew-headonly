@@ -8,7 +8,7 @@ class Despotify < Formula
   depends_on 'libao'
   depends_on 'libvorbis'
   depends_on 'mpg123'
-  depends_on 'libtool'
+  depends_on 'libtool' => :run
 
   def install
     system "make Makefile.local.mk"

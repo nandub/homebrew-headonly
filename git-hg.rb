@@ -16,7 +16,7 @@ class HgInstalled < Requirement
 end
 
 class GitHg < Formula
-  head 'https://github.com/offbytwo/git-hg.git'
+  head 'https://github.com/cosmin/git-hg.git'
   homepage 'http://offbytwo.com/git-hg/'
 
   depends_on HgInstalled

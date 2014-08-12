@@ -16,7 +16,7 @@ class Smpeg < Formula
   depends_on 'gtk+'
 
   def install
-    sdl = Formula.factory("sdl")
+    sdl = Formula["sdl"]
     system "./autogen.sh"
     system "./configure", "--disable-debug", "--disable-dependency-tracking",
                           "--prefix=#{prefix}",

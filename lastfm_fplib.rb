@@ -11,7 +11,9 @@ class LastfmFplib < Formula
   depends_on 'fftw'
 
   def install
-    Formula.factory("lastfmfpclient").inreplace_fix
+    inreplace 'fplib/src/FloatingAverage.h',
+      'for ( int i = 0; i < size; ++i )',
+      'for ( int i = 0; i < m_values.size(); ++i )'
     system "cmake", ".", *std_cmake_args
     system "make install"
   end

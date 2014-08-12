@@ -11,7 +11,7 @@ class Otx < Formula
       s.gsub! "MacOSX10.6.sdk", "MacOSX#{MacOS.version}.sdk"
     end
 
-    system 'xcodebuild SYMROOT=build'
+    xcodebuild 'SYMROOT=build'
     build = buildpath/'build/Release'
     bin.install build/"otx"
     prefix.install build/"otx.app"

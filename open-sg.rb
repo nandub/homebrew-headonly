@@ -2,8 +2,7 @@ require 'formula'
 
 class OpenSg < Formula
   homepage 'http://www.opensg.org/wiki'
-
-  head 'cvs://:pserver:anonymous@opensg.cvs.sourceforge.net:/cvsroot/opensg:OpenSG'
+  head ':pserver:anonymous@opensg.cvs.sourceforge.net:/cvsroot/opensg', :using => :cvs, :module => "OpenSG"
 
   depends_on 'libtiff'
   depends_on 'jpeg'

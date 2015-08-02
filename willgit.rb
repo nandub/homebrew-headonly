@@ -1,8 +1,9 @@
 require 'formula'
 
 class Willgit < Formula
-  homepage 'http://git-wt-commit.rubyforge.org/'
-  head 'git://gitorious.org/willgit/mainline.git'
+  desc "William's miscellaneous git tools"
+  homepage 'http://git-wt-commit.rubyforge.org'
+  head 'https://gitorious.org/willgit/mainline.git'
 
   def install
     prefix.install 'bin'

@@ -7,8 +7,8 @@ class Libemu < Formula
   option "enable-python-bindings", "Compile bindings for Python"
 
   depends_on 'pkg-config' => :build
-  depends_on :automake
-  depends_on :libtool
+  depends_on "automake" => :build
+  depends_on "libtool" => :build
 
   def install
     inreplace 'Makefile.am' do |s|

@@ -6,7 +6,7 @@ class Darwinbuild < Formula
 
   patch :DATA
 
-  depends_on :xcode # For working xcodebuild.
+  depends_on :xcode => :build
 
   def install
     xcodebuild "-configuration", "Release", "install", "DSTROOT=/", "PREFIX=#{prefix}", "SYMROOT=build"

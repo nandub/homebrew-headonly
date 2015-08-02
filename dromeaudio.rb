@@ -1,8 +1,8 @@
 require 'formula'
 
-class Gccxml < Formula
-  homepage 'http://gccxml.github.io/'
-  head 'https://github.com/gccxml/gccxml.git'
+class Dromeaudio < Formula
+  homepage 'https://github.com/joshb/dromeaudio/'
+  head 'https://github.com/joshb/dromeaudio.git'
 
   depends_on 'cmake' => :build
 
